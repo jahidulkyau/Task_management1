@@ -1,5 +1,4 @@
 class Urls {
-
   static const String _baseUrl = 'http://35.73.30.144:2005/api/v1';
 
   static const String resisterUrl = '$_baseUrl/Registration';
@@ -7,9 +6,16 @@ class Urls {
   static const String updateProfileUrl = '$_baseUrl/ProfileUpdate';
   static const String createTaskUrl = '$_baseUrl/createTask';
   static const String taskStatusCountUrl = '$_baseUrl/taskStatusCount';
+  static const String newTaskListUrl = '$_baseUrl/listTaskByStatus/New';
+  static const String progressTaskListUrl =
+      '$_baseUrl/listTaskByStatus/Progress';
+  static const String completedTaskListUrl =
+      '$_baseUrl/listTaskByStatus/Completed';
+  static const String canceledTaskListUrl =
+      '$_baseUrl/listTaskByStatus/Canceled';
 
-
-
-
-
+  static String updateTaskStatusUrl(String taskId, String status) =>
+      '$_baseUrl/updateTaskStatus/$taskId/$status';
+  static String deleteTaskUrl(String taskId) =>
+      '$_baseUrl/deleteTask/$taskId';
 }
