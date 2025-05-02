@@ -52,7 +52,7 @@ class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
                     ),
                     validator: (String? value) {
                       if (value?.trim().isEmpty ?? true) {
-                        return 'Enter your title';
+                        return 'Enter title';
                       }
                       return null;
                     },
