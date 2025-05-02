@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:task_management/controller_binder.dart';
 import 'package:task_management/ui/screens/splash_screen.dart';
 
 class TaskManagerApp extends StatelessWidget {
   const TaskManagerApp({super.key});
   static final GlobalKey<NavigatorState> navigatorKey =
-      GlobalKey<NavigatorState>();
+      GlobalKey<NavigatorState>(); 
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       navigatorKey: TaskManagerApp.navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -38,6 +40,7 @@ class TaskManagerApp extends StatelessWidget {
             titleMedium: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
           )),
       home: const SplashScreen(),
+      initialBinding: ControllerBinder(),
     );
   }
 
